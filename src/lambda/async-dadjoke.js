@@ -4,11 +4,11 @@
 import axios from "axios"
 export async function handler(event, context) {
   try {
-    const response = await axios.get("https://icanhazdadjoke.com", { headers: { Accept: "application/json" } })
+    const response = await axios.get("http://dev.cartegriseminute.net/apigeo/cgDonnees/getDonnees?immatriculation=CD-125-GT&contrat=2", { headers: { Accept: "application/json" } })
     const data = response.data
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke })
+      body: JSON.stringify({ msg: data.immat })
     }
   } catch (err) {
     console.log(err) // output to netlify function log
